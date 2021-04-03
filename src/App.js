@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { useState } from "react"
+import Search from "./components/Search"
+import Body from "./components/Body"
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [jsonBody, setJsonBody] = useState([])
+	const [url, setUrl] = useState("")
+	const [load, setLoad] = useState(false)
+	return (
+		<div className="App">
+			<Search
+				className="sticky-top"
+				setUrl={setUrl}
+				setJsonBody={setJsonBody}
+				setLoad={setLoad}
+			></Search>
+			<Body
+				jsonBody={jsonBody}
+				setJsonBody={setJsonBody}
+				url={url}
+				load={load}
+				setLoad={setLoad}
+			></Body>
+		</div>
+	)
 }
 
-export default App;
+export default App
