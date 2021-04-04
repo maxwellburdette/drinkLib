@@ -5,6 +5,7 @@ function App() {
 	const [jsonBody, setJsonBody] = useState([])
 	const [url, setUrl] = useState("")
 	const [load, setLoad] = useState(false)
+
 	return (
 		<div className="App">
 			<Search

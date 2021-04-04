@@ -14,7 +14,6 @@ export default function Search({ setUrl, setJsonBody, setLoad }) {
 			.get("https://www.thecocktaildb.com/api/json/v1/1/random.php")
 			.then(function (response) {
 				// handle success]
-				console.log(response.data.drinks)
 				setJsonBody(response.data.drinks)
 				setLoad(false)
 			})
@@ -41,7 +40,7 @@ export default function Search({ setUrl, setJsonBody, setLoad }) {
 						placeholder="Search"
 						className="mr-sm-2 py-2"
 					/>
-					<Button className="my-2" variant="outline-primary">
+					<Button type="submit" className="my-2" variant="outline-primary">
 						Search
 					</Button>
 				</Form>
