@@ -1,12 +1,5 @@
 import React from "react"
-import {
-	Navbar,
-	Nav,
-	Form,
-	FormControl,
-	Button,
-	NavDropdown,
-} from "react-bootstrap"
+import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap"
 import axios from "axios"
 
 export default function Search({ setUrl, setJsonBody, setLoad }) {
@@ -33,18 +26,6 @@ export default function Search({ setUrl, setJsonBody, setLoad }) {
 				// always executed
 			})
 	}
-	// <Navbar bg="dark" variant="dark">
-	// 			<Navbar.Brand href="#home">Drink Library</Navbar.Brand>
-	// 			<Nav className="mr-auto">
-	// 				<Nav.Link onClick={generateLink}>Generate Random Drink</Nav.Link>
-	// 			</Nav>
-	// 			<Form onSubmit={searchDrink} inline>
-	// 				<FormControl type="text" placeholder="Search" className="mr-sm-2" />
-	// 				<Button type="submit" variant="outline-info">
-	// 					Search
-	// 				</Button>
-	// 			</Form>
-	// 		</Navbar>
 
 	return (
 		<Navbar sticky="top" bg="dark" variant="dark" expand="lg">
