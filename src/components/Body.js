@@ -56,6 +56,7 @@ export default function Body({ jsonBody, setJsonBody, url, load, setLoad }) {
 			<Container
 				style={{ height: "100vh" }}
 				className="d-flex flex-column py-2 my-2 align-items-center"
+				fluid="md"
 			>
 				{load ? (
 					<div className="sticky-top my-2">

@@ -92,7 +92,7 @@ export default function Cards({ drink }) {
 	return (
 		<div>
 			{drink ? (
-				<Card className="my-2" style={{ width: "40rem" }}>
+				<Card className="my-2" style={{ width: "18rem" }}>
 					<Card.Img variant="top" src={drink.strDrinkThumb} />
 					<Card.Body>
 						<Card.Title>{drink.strDrink}</Card.Title>

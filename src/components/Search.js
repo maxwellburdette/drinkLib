@@ -1,9 +1,17 @@
 import React from "react"
-import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap"
+import {
+	Navbar,
+	Nav,
+	Form,
+	FormControl,
+	Button,
+	NavDropdown,
+} from "react-bootstrap"
 import axios from "axios"
 
 export default function Search({ setUrl, setJsonBody, setLoad }) {
 	function searchDrink(e) {
+		e.preventDefault()
 		setUrl(e.target.childNodes[0].value)
 		e.target.childNodes[0].value = ""
 	}
@@ -12,7 +20,8 @@ export default function Search({ setUrl, setJsonBody, setLoad }) {
 		return await axios
 			.get("https://www.thecocktaildb.com/api/json/v1/1/random.php")
 			.then(function (response) {
-				// handle success
+				// handle success]
+				console.log(response.data.drinks)
 				setJsonBody(response.data.drinks)
 				setLoad(false)
 			})
@@ -24,21 +33,38 @@ export default function Search({ setUrl, setJsonBody, setLoad }) {
 				// always executed
 			})
 	}
+	// <Navbar bg="dark" variant="dark">
+	// 			<Navbar.Brand href="#home">Drink Library</Navbar.Brand>
+	// 			<Nav className="mr-auto">
+	// 				<Nav.Link onClick={generateLink}>Generate Random Drink</Nav.Link>
+	// 			</Nav>
+	// 			<Form onSubmit={searchDrink} inline>
+	// 				<FormControl type="text" placeholder="Search" className="mr-sm-2" />
+	// 				<Button type="submit" variant="outline-info">
+	// 					Search
+	// 				</Button>
+	// 			</Form>
+	// 		</Navbar>
 
 	return (
-		<div>
-			<Navbar bg="dark" variant="dark">
-				<Navbar.Brand href="#home">Drink Library</Navbar.Brand>
-				<Nav className="mr-auto">
+		<Navbar sticky="top" bg="dark" variant="dark" expand="lg">
+			<Navbar.Brand href="#home">Drink Library</Navbar.Brand>
+			<Navbar.Toggle aria-controls="basic-navbar-nav" />
+			<Navbar.Collapse id="basic-navbar-nav">
+				<Nav className="mr-auto py-2">
 					<Nav.Link onClick={generateLink}>Generate Random Drink</Nav.Link>
 				</Nav>
 				<Form onSubmit={searchDrink} inline>
-					<FormControl type="text" placeholder="Search" className="mr-sm-2" />
-					<Button type="submit" variant="outline-info">
+					<FormControl
+						type="text"
+						placeholder="Search"
+						className="mr-sm-2 py-2"
+					/>
+					<Button className="my-2" variant="outline-primary">
 						Search
 					</Button>
 				</Form>
-			</Navbar>
-		</div>
+			</Navbar.Collapse>
+		</Navbar>
 	)
 }
