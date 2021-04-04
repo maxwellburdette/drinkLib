@@ -105,7 +105,13 @@ export default function Cards({ drink }) {
 			) : (
 				""
 			)}
-			<Modal show={show} onHide={handleClose}>
+			<Modal
+				show={show}
+				onHide={handleClose}
+				size="lg"
+				aria-labelledby="contained-modal-title-vcenter"
+				centered
+			>
 				<Modal.Header closeButton>
 					<Modal.Title>{drink.strDrink} ingredients</Modal.Title>
 				</Modal.Header>
