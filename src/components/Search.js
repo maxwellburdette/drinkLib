@@ -27,14 +27,16 @@ export default function Search({ setUrl, setJsonBody, setLoad }) {
 	}
 
 	return (
-		<Navbar sticky="top" bg="dark" variant="dark" expand="lg">
+		<Navbar collapseOnSelect sticky="top" bg="dark" variant="dark" expand="lg">
 			<Navbar.Brand href="#home">Drink Library</Navbar.Brand>
-			<Navbar.Toggle aria-controls="basic-navbar-nav" />
-			<Navbar.Collapse id="basic-navbar-nav">
+			<Navbar.Toggle aria-controls="responsive-navbar-nav" />
+			<Navbar.Collapse id="responsive-navbar-nav">
 				<Nav className="mr-auto py-2">
-					<Nav.Link onClick={generateLink}>Generate Random Drink</Nav.Link>
+					<Nav.Link onClick={generateLink} href="#home">
+						Generate Random Drink
+					</Nav.Link>
 				</Nav>
-				<Form onSubmit={searchDrink} inline>
+				<Form collapseOnSelect onSubmit={searchDrink} inline>
 					<FormControl
 						type="text"
 						placeholder="Search"
