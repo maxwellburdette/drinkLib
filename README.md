@@ -1,7 +1,7 @@
 # Drink Library
 
 # Hosted Site:
-https://infallible-meninsky-9db64d.netlify.app/
+https://drinklib.netlify.app/
 
 # API:
 The site is powered by this great api check it out:
